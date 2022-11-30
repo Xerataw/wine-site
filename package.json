@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "wine-site",
-  "author": "Oxy",
+  "author": "Lucas Nouhaud",
   "keywords": [
     "gatsby"
   ],
@@ -15,7 +15,11 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fontsource/alex-brush": "^4.5.9",
+    "@fontsource/montserrat": "^4.5.13",
+    "antd": "^5.0.2",
     "gatsby": "^5.2.0",
+    "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-source-filesystem": "^5.2.0",

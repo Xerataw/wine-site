@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `wine-site`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://github.com/Xerataw`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',

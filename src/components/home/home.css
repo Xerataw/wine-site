@@ -1,0 +1,15 @@
+.title {
+    font-family: "Alex Brush";
+    font-size: 150px !important;
+}
+
+article{
+    padding: 30px;
+    width: 50%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
