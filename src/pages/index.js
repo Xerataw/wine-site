@@ -69,7 +69,7 @@ const IndexPage = () => {
             <Menu className="menu" mode="horizontal" items={siteParts} defaultSelectedKeys={["home"]} onSelect={itemSelect} />
           </Col>
         </Row>
-        <Gallery/>
+        <Contact />
       </ConfigProvider>
     </>
   )
