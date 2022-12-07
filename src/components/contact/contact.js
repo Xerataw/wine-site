@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Col, Form, Input, Row } from "antd";
 import TextArea from "antd/es/input/TextArea";
+import { SendOutlined } from '@ant-design/icons';
 
 const Contact = () => {
 
@@ -46,9 +47,16 @@ const Contact = () => {
                             maxRows: 4
                         }} />
                     </Form.Item>
-                    <Form.Item>
-                        <Button type="primary" htmlType="submit">Send</Button>
-                    </Form.Item>
+                    <Row>
+                        <Col span={24} style={{
+                            textAlign: 'right'
+                        }}>
+                            <Form.Item>
+                                <Button type="primary" htmlType="submit" size="large">Send <SendOutlined /></Button>
+                            </Form.Item>
+                        </Col>
+                    </Row>
+
                 </Form>
             </Col>
             <Col span={9}>

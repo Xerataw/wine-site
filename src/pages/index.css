@@ -9,7 +9,6 @@ body {
 .header {
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.5074404761904762) 0%, rgba(0, 0, 0, 0.227328431372549) 50%, rgba(0, 0, 0, 0) 100%);
-    margin-bottom: 10vh;
 }
 
 .menu {
