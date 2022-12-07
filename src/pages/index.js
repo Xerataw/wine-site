@@ -50,7 +50,8 @@ const IndexPage = () => {
           colorPrimary: '#B8286E',
           fontFamily: 'Montserrat',
           fontSize: '25px',
-          fontSizeHeading1: '30px'
+          fontSizeHeading1: '30px',
+          colorError: '#db0000'
         },
         components: {
           Menu: {

@@ -8,7 +8,7 @@ const Contact = () => {
         alert("finished")
     }
 
-    const validMessages = {
+    const validationMessages = {
         required: "${label} is required!",
         types: {
             email: "${label} is not valid!"
@@ -21,7 +21,7 @@ const Contact = () => {
 
             </Col>
             <Col span={6}>
-                <Form name="contact-form" wrapperCol={{ span: 16 }} onFinish={onFinish} validateMessages={validMessages}>
+                <Form name="contact-form" wrapperCol={{ span: 24 }} onFinish={onFinish} validateMessages={validationMessages} layout="vertical">
                     <Form.Item label="First name" name="fname" rules={[{
                         required: true,
                     }]}>
