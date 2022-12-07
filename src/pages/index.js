@@ -3,31 +3,45 @@ import * as React from "react";
 import './index.css';
 
 import logo from '../images/wine_logo.png';
-import Home from "../components/home/home";
+import Home from '../components/home/home';
+import About from '../components/about/about';
+import Contact from '../components/contact/contact';
+import Gallery from '../components/gallery/gallery';
+import Shop from '../components/shop/shop';
+
 
 const IndexPage = () => {
   const siteParts = [
     {
-      key: 1,
-      label: "Home"
+      key: "home",
+      label: "Home",
+      component: Home
     },
     {
-      key: 2,
-      label: "About us"
+      key: "about",
+      label: "About us",
+      component: About
     },
     {
-      key: 3,
-      label: "Gallery"
+      key: "gallery",
+      label: "Gallery",
+      component: Gallery
     },
     {
-      key: 4,
-      label: "Shop"
+      key: "shop",
+      label: "Shop",
+      component: Shop
     },
     {
-      key: 5,
-      label: "Contact us"
+      key: "contact",
+      label: "Contact us",
+      component: Contact
     },
   ]
+
+  const itemSelect = (item) => {
+    //component = siteParts[item.key].component; 
+  }
 
   return (
     <>
@@ -52,16 +66,10 @@ const IndexPage = () => {
 
           </Col>
           <Col span={8}>
-            <Menu className="menu" mode="horizontal" items={siteParts} />
+            <Menu className="menu" mode="horizontal" items={siteParts} defaultSelectedKeys={["home"]} onSelect={itemSelect} />
           </Col>
         </Row>
-        <Row>
-          <Col span={16}>
-          </Col>
-          <Col>
-            <Home />
-          </Col>
-        </Row>
+        <Gallery/>
       </ConfigProvider>
     </>
   )

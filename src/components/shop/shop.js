@@ -1,10 +1,11 @@
 import React from "react";
+import { Typography } from "antd";
 
 const Shop = () => {
 
-    return(
+    return (
         <>
-
+            <Typography>Shop</Typography>
         </>
     );
 }

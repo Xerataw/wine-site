@@ -9,8 +9,8 @@ const Home = () => {
     return (
         <Row align={"middle"}>
             <Col span={12}>
-                <div className="container">
-                    <article>
+                <div className="home container">
+                    <article className="home">
                         <Title level={1}>You deserve what's best</Title>
                         <Paragraph>
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe culpa a in quis repellat?
@@ -21,8 +21,8 @@ const Home = () => {
                 </div>
             </Col>
             <Col span={12}>
-                <div className="container">
-                    <Title level={1} className="title">Wanpany</Title>
+                <div className="home container">
+                    <Title level={1} className="home title">Wanpany</Title>
                 </div>
             </Col>
         </Row>
