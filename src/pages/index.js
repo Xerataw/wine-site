@@ -15,36 +15,93 @@ const IndexPage = () => {
     {
       key: "home",
       label: "Home",
-      component: Home
     },
     {
       key: "about",
       label: "About us",
-      component: About
     },
     {
       key: "gallery",
       label: "Gallery",
-      component: Gallery
     },
     {
       key: "shop",
       label: "Shop",
-      component: Shop
     },
     {
       key: "contact",
       label: "Contact us",
-      component: Contact
     },
   ]
 
   const itemSelect = (item) => {
-    //component = siteParts[item.key].component; 
+    setSlideOut(1);
+    
+    setTimeout(() => {
+      unsetActualComponent();
+    }, 500);
+
+    setTimeout(() => {
+      switch (item.key) {
+        case 'home':
+          setHome(true);
+          break;
+        case 'about':
+          setAbout(true);
+          break;
+        case 'gallery':
+          setGallery(true);
+          break;
+        case 'shop':
+          setShop(true);
+          break;
+        case 'contact':
+          setContact(true);
+          break;
+      }
+      setSlideIn(1);
+    }, 550);
+
   }
 
+  const unsetActualComponent = () => {
+    if (home) {
+      setHome(false);
+    }
+    if (about) {
+      setAbout(false);
+    }
+    if (gallery) {
+      setGallery(false);
+    }
+    if (shop) {
+      setShop(false);
+    }
+    if (contact) {
+      setContact(false);
+    }
+  }
+
+  const resetAnimation = () => {
+    if (slideIn == 1) {
+      setSlideIn(0);
+    }
+    if (slideOut == 1) {
+      setSlideOut(0)
+    }
+  }
+
+  const [slideIn, setSlideIn] = React.useState(0);
+  const [slideOut, setSlideOut] = React.useState(0);
+
+  const [home, setHome] = React.useState(true);
+  const [about, setAbout] = React.useState(false);
+  const [gallery, setGallery] = React.useState(false);
+  const [shop, setShop] = React.useState(false);
+  const [contact, setContact] = React.useState(false);
+
   return (
-    <>
+    <div className="sliderContainer">
       <ConfigProvider theme={{
         token: {
           colorPrimary: '#B8286E',
@@ -70,9 +127,15 @@ const IndexPage = () => {
             <Menu className="menu" mode="horizontal" items={siteParts} defaultSelectedKeys={["home"]} onSelect={itemSelect} />
           </Col>
         </Row>
-        <Contact />
+        <div className="slider" onAnimationEnd={resetAnimation} slidein={slideIn} slideout={slideOut}>
+          {home && <Home />}
+          {about && <About />}
+          {gallery && <Gallery />}
+          {shop && <Shop />}
+          {contact && <Contact />}
+        </div>
       </ConfigProvider>
-    </>
+    </div>
   )
 }
 
