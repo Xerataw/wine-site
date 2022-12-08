@@ -34,52 +34,48 @@ const IndexPage = () => {
     },
   ]
 
-  const itemSelect = (item) => {
+  const itemSelect = async (item) => {
+    fadeOutLauncher();
+
+    setTimeout(() => {
+      fadeInLauncher(item);
+    }, 550);
+  }
+
+  const fadeInLauncher = (item) => {
+    switch (item.key) {
+      case 'home':
+        setHome(true);
+        break;
+      case 'about':
+        setAbout(true);
+        break;
+      case 'gallery':
+        setGallery(true);
+        break;
+      case 'shop':
+        setShop(true);
+        break;
+      case 'contact':
+        setContact(true);
+        break;
+    }
+    setSlideIn(1);
+  }
+
+  const fadeOutLauncher = () => {
     setSlideOut(1);
-    
     setTimeout(() => {
       unsetActualComponent();
     }, 500);
-
-    setTimeout(() => {
-      switch (item.key) {
-        case 'home':
-          setHome(true);
-          break;
-        case 'about':
-          setAbout(true);
-          break;
-        case 'gallery':
-          setGallery(true);
-          break;
-        case 'shop':
-          setShop(true);
-          break;
-        case 'contact':
-          setContact(true);
-          break;
-      }
-      setSlideIn(1);
-    }, 550);
-
   }
 
   const unsetActualComponent = () => {
-    if (home) {
-      setHome(false);
-    }
-    if (about) {
-      setAbout(false);
-    }
-    if (gallery) {
-      setGallery(false);
-    }
-    if (shop) {
-      setShop(false);
-    }
-    if (contact) {
-      setContact(false);
-    }
+    setHome(false);
+    setAbout(false);
+    setGallery(false);
+    setContact(false);
+    setShop(false);
   }
 
   const resetAnimation = () => {
