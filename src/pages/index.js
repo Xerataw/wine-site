@@ -7,8 +7,6 @@ import Home from '../components/home/home';
 import About from '../components/about/about';
 import Contact from '../components/contact/contact';
 import Gallery from '../components/gallery/gallery';
-import Shop from '../components/shop/shop';
-
 
 const IndexPage = () => {
   const siteParts = [
@@ -23,10 +21,6 @@ const IndexPage = () => {
     {
       key: "gallery",
       label: "Gallery",
-    },
-    {
-      key: "shop",
-      label: "Shop",
     },
     {
       key: "contact",
@@ -52,9 +46,6 @@ const IndexPage = () => {
         break;
       case 'gallery':
         setGallery(true);
-        break;
-      case 'shop':
-        setShop(true);
         break;
       case 'contact':
         setContact(true);
@@ -116,10 +107,10 @@ const IndexPage = () => {
           <Col span={12}>
             <img className="logoImage" src={logo} />
           </Col>
-          <Col span={4}>
+          <Col span={5}>
 
           </Col>
-          <Col span={8}>
+          <Col span={7}>
             <Menu className="menu" mode="horizontal" items={siteParts} defaultSelectedKeys={["home"]} onSelect={itemSelect} />
           </Col>
         </Row>
@@ -127,7 +118,6 @@ const IndexPage = () => {
           {home && <Home />}
           {about && <About />}
           {gallery && <Gallery />}
-          {shop && <Shop />}
           {contact && <Contact />}
         </div>
       </ConfigProvider>
