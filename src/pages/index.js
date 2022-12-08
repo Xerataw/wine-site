@@ -28,8 +28,8 @@ const IndexPage = () => {
     },
   ]
 
-  const itemSelect = async (item) => {
-    fadeOutLauncher();
+  const itemSelect = (item) => {
+    fadeOutLauncher(item);
 
     setTimeout(() => {
       fadeInLauncher(item);
@@ -40,22 +40,55 @@ const IndexPage = () => {
     switch (item.key) {
       case 'home':
         setHome(true);
+        setSlideInLeft(1);
         break;
       case 'about':
         setAbout(true);
+        if (pastComponent === 'home') {
+          setSlideInRight(1);
+        } else {
+          setSlideInLeft(1);
+        }
         break;
       case 'gallery':
         setGallery(true);
+        if (pastComponent === 'contact') {
+          setSlideInLeft(1);
+        } else {
+          setSlideInRight(1);
+        }
         break;
       case 'contact':
         setContact(true);
+        setSlideInRight(1);
         break;
     }
-    setSlideIn(1);
+    setPastComponent(item.key);
   }
 
-  const fadeOutLauncher = () => {
-    setSlideOut(1);
+  const fadeOutLauncher = (item) => {
+    switch (item.key) {
+      case 'home':
+        setSlideOutRight(1);
+        break;
+      case 'about':
+        if (pastComponent === 'home') {
+          setSlideOutLeft(1);
+        } else {
+          setSlideOutRight(1);
+        }
+        break;
+      case 'gallery':
+        if (pastComponent === 'contact') {
+          setSlideOutRight(1);
+        } else {
+          setSlideOutLeft(1);
+        }
+        break;
+      case 'contact':
+        setSlideOutLeft(1);
+        break;
+    }
     setTimeout(() => {
       unsetActualComponent();
     }, 500);
@@ -66,26 +99,26 @@ const IndexPage = () => {
     setAbout(false);
     setGallery(false);
     setContact(false);
-    setShop(false);
   }
 
   const resetAnimation = () => {
-    if (slideIn == 1) {
-      setSlideIn(0);
-    }
-    if (slideOut == 1) {
-      setSlideOut(0)
-    }
+    setSlideInLeft(0);
+    setSlideOutLeft(0);
+    setSlideInRight(0);
+    setSlideOutRight(0);
   }
 
-  const [slideIn, setSlideIn] = React.useState(0);
-  const [slideOut, setSlideOut] = React.useState(0);
+  const [slideInleft, setSlideInLeft] = React.useState(0);
+  const [slideOutLeft, setSlideOutLeft] = React.useState(0);
+  const [slideInRight, setSlideInRight] = React.useState(0);
+  const [slideOutRight, setSlideOutRight] = React.useState(0);
 
   const [home, setHome] = React.useState(true);
   const [about, setAbout] = React.useState(false);
   const [gallery, setGallery] = React.useState(false);
-  const [shop, setShop] = React.useState(false);
   const [contact, setContact] = React.useState(false);
+
+  const [pastComponent, setPastComponent] = React.useState('home');
 
   return (
     <div className="sliderContainer">
@@ -114,7 +147,7 @@ const IndexPage = () => {
             <Menu className="menu" mode="horizontal" items={siteParts} defaultSelectedKeys={["home"]} onSelect={itemSelect} />
           </Col>
         </Row>
-        <div className="slider" onAnimationEnd={resetAnimation} slidein={slideIn} slideout={slideOut}>
+        <div className="slider" onAnimationEnd={resetAnimation} slideinleft={slideInleft} slideoutleft={slideOutLeft} slideinright={slideInRight} slideoutright={slideOutRight}>
           {home && <Home />}
           {about && <About />}
           {gallery && <Gallery />}
