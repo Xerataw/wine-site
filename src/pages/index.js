@@ -93,8 +93,8 @@ const IndexPage = () => {
         token: {
           colorPrimary: '#B8286E',
           fontFamily: 'Montserrat',
-          fontSize: '25px',
-          fontSizeHeading1: '30px',
+          fontSize: '20px',
+          fontSizeHeading1: '25px',
           colorError: '#db0000'
         },
         components: {
@@ -107,10 +107,10 @@ const IndexPage = () => {
           <Col span={12}>
             <img className="logoImage" src={logo} />
           </Col>
-          <Col span={5}>
+          <Col span={3}>
 
           </Col>
-          <Col span={7}>
+          <Col span={9}>
             <Menu className="menu" mode="horizontal" items={siteParts} defaultSelectedKeys={["home"]} onSelect={itemSelect} />
           </Col>
         </Row>
