@@ -7,11 +7,16 @@ module.exports = {
     siteUrl: `https://github.com/Xerataw`
   },
   plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
-    resolve: 'gatsby-source-filesystem',
+    resolve: 'gatsby-plugin-antd',
     options: {
-      "name": "images",
-      "path": "./src/images/"
-    },
-    __key: "images"
-  }]
+      style: true
+    }
+  }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "images",
+        "path": "./src/images/"
+      },
+      __key: "images"
+    }]
 };
