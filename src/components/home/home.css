@@ -13,6 +13,8 @@ article.home {
 }
 
 .home.container {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     display: flex;
     justify-content: center;
 }

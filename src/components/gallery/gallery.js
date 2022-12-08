@@ -14,7 +14,9 @@ import gallery6 from '../../images/gallery6.jpg';
 const Gallery = () => {
 
     return (
-        <Row align={"middle"}>
+        <Row align={"middle"} style={{
+            marginTop: "5vh"
+        }}>
             <Col span={12}>
                 <Carousel className="gallery carousel" autoplay>
                     <img className="gallery carousel image" src={slide1} alt="Mariage dining room" />

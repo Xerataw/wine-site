@@ -17,7 +17,9 @@ const Contact = () => {
     }
 
     return (
-        <Row>
+        <Row style={{
+            marginTop: "5vh"
+        }}>
             <Col span={9}>
 
             </Col>

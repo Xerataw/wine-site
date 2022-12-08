@@ -6,7 +6,9 @@ import React from "react";
 const About = () => {
 
     return (
-        <Row justify={"space-around"}>
+        <Row justify={"space-around"} style={{
+            marginTop: "10vh"
+        }}>
             <Col span={6}>
                 <article className="about">
                     <Title>Our history</Title>
