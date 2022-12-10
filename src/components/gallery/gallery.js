@@ -28,24 +28,24 @@ const Gallery = () => {
                 <Space direction="vertical" size={'large'}>
                     <Row justify={"space-around"}>
                         <Col span={6}>
-                            <Image width={"100%"} src={gallery1} />
+                            <Image width={"100%"} src={gallery1}  alt="A table during a dinning reception"/>
                         </Col>
                         <Col span={6}>
-                            <Image width={"100%"} src={gallery2} />
+                            <Image width={"100%"} src={gallery2} alt="People cheering"/>
                         </Col>
                         <Col span={6}>
-                            <Image width={"100%"} src={gallery3} />
+                            <Image width={"100%"} src={gallery3} alt="A vine field"/>
                         </Col>
                     </Row>
                     <Row justify={"space-around"}>
                         <Col span={6}>
-                            <Image width={"100%"} src={gallery4} />
+                            <Image width={"100%"} src={gallery4} alt="A vine field"/>
                         </Col>
                         <Col span={6}>
-                            <Image width={"100%"} src={gallery5} />
+                            <Image width={"100%"} src={gallery5} alt="A banquet"/>
                         </Col>
                         <Col span={6}>
-                            <Image width={"100%"} src={gallery6} />
+                            <Image width={"100%"} src={gallery6} alt="A mariage dining room"/>
                         </Col>
                     </Row>
                 </Space>

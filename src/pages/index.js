@@ -137,7 +137,7 @@ const IndexPage = () => {
       }}>
         <Row className="header" align={"middle"}>
           <Col span={12}>
-            <img className="logoImage" src={logo} />
+            <img className="logoImage" src={logo} alt="The logo of Wanepany company"/>
           </Col>
           <Col span={3}>
 
