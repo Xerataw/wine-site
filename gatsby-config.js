@@ -6,7 +6,7 @@ module.exports = {
     title: `wine-site`,
     siteUrl: `https://github.com/Xerataw`
   },
-  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  plugins: ["gatsby-plugin-image", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-plugin-react-helmet", {
     resolve: 'gatsby-plugin-antd',
     options: {
       style: true

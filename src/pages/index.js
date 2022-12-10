@@ -126,7 +126,6 @@ const IndexPage = () => {
         token: {
           colorPrimary: '#B8286E',
           fontFamily: 'Montserrat',
-          fontSize: '20px',
           fontSizeHeading1: '25px',
           colorError: '#db0000'
         },
