@@ -2,7 +2,7 @@ import { Col, ConfigProvider, Menu, Row } from "antd";
 import * as React from "react";
 import './index.css';
 
-import logo from '../images/wine_logo.png';
+import logo from '../images/wine_logo.webp';
 import Home from '../components/home/home';
 import About from '../components/about/about';
 import Contact from '../components/contact/contact';
